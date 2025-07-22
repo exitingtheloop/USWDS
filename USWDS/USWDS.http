@@ -1,0 +1,6 @@
+@USWDS_HostAddress = http://localhost:5245
+
+GET {{USWDS_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
