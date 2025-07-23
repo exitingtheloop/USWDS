@@ -1,0 +1,139 @@
+﻿$theme-accordion-font-family: "sans";
+$theme-in-page-nav-font-family: "sans";
+$theme-navigation-font-family: "sans";
+$theme-sidenav-font-family: "sans";
+
+@import "../../uswds/scss/uswds";
+
+.usa-nav {
+    background-color: #162e52;
+    border: 0;
+    float: none;
+}
+
+.usa-logo__image::before {
+    content: "";
+    display: block;
+    height: 150%;
+    width: 0;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.usa-logo__image {
+    background-image: url(/assets/img/usda-logo.svg);
+    height: 25px;
+    overflow: hidden;
+    width: 203px;
+    background-size: 203px 25px;
+    display: inline-block;
+    margin-inline-start: 0
+}
+
+.usa-logo__image::before {
+    content: "";
+    display: block;
+    height: 150%;
+    width: 0
+}
+
+@media(min-width: 25em) {
+    .usa-logo__image {
+        height: 47px;
+        overflow: hidden;
+        width: 249px;
+        background-size: 249px 47px
+    }
+
+    .usa-logo__image::before {
+        content: "";
+        display: block;
+        height: 150%;
+        width: 0
+    }
+}
+
+@media(min-width: 64em) {
+    .usa-logo__image {
+        height: 39px;
+        overflow: hidden;
+        width: 313px;
+        background-size: 313px 39px
+    }
+
+    .usa-logo__image::before {
+        content: "";
+        display: block;
+        height: 150%;
+        width: 0
+    }
+}
+
+.usa-nav__primary button{
+    color: #fff;
+}
+
+@media (min-width: 64em) {
+    .usa-nav__primary button {
+        font-weight: 300;
+    }
+}
+
+@media (min-width: 64em) {
+    .usa-nav__primary > .usa-nav__primary-item > a {
+        font-weight: 300;
+        color: #fff;
+    }
+}
+
+@media (min-width: 64em) {
+    .usa-nav__primary > .usa-nav__primary-item > .usa-accordion__button::after {
+        background: #005ea2;
+        bottom: 0;
+        content: "";
+        height: 30px;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 0;
+        width: 1px;
+    }
+}
+
+.caret {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    margin-left: 2px;
+    vertical-align: middle;
+    border-top: 4px dashed;
+    border-top: 4px solid \9;
+    border-right: 4px solid transparent;
+    border-left: 4px solid transparent;
+}
+
+@media (min-width: 64em) {
+    .usa-nav__primary button[aria-expanded=false] span::after {
+        display:none;
+    }
+}
+
+@media (min-width: 64em) {
+    .usa-nav__primary .usa-accordion__button span {
+        margin-right: 0;
+        padding-right: 0;
+    }
+}
+
+.usa-nav__secondary-links .usa-nav__secondary-item a{
+    font-weight: 300;
+}
+
+@media (min-width: 64em) {
+    .usa-nav__secondary-links .usa-nav__secondary-item + .usa-nav__secondary-item::before {
+        color: #565c65;
+        font-weight: 300;
+    }
+}
