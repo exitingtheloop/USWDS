@@ -6497,6 +6497,12 @@ button.usa-combo-box__clear-input:focus {
   background-size: 1.5rem;
 }
 
+@media (min-width: 64em) {
+  .usa-header--extended .usa-nav__primary-item > .usa-current::after,
+  .usa-header--extended .usa-nav__primary-item > .usa-nav__link:hover::after {
+    display: none !important;
+  }
+}
 .usa-alert {
   font-family: Source Sans Pro Web, Helvetica Neue, Helvetica, Roboto, Arial, sans-serif;
   font-size: 1.06rem;
@@ -71102,26 +71108,21 @@ example:
 
 @media (min-width: 64em) {
   .usa-nav__primary button {
-    font-weight: 300;
+    font-weight: normal;
+  }
+  .usa-nav__primary button:hover {
+    color: #fff;
+    text-decoration: underline;
   }
 }
 @media (min-width: 64em) {
   .usa-nav__primary > .usa-nav__primary-item > a {
-    font-weight: 300;
+    font-weight: normal;
     color: #fff;
   }
-}
-@media (min-width: 64em) {
-  .usa-nav__primary > .usa-nav__primary-item > .usa-accordion__button::after {
-    background: #005ea2;
-    bottom: 0;
-    content: "";
-    height: 30px;
-    margin: auto;
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 1px;
+  .usa-nav__primary > .usa-nav__primary-item > a:hover {
+    color: #fff;
+    text-decoration: underline;
   }
 }
 .caret {
@@ -71156,6 +71157,11 @@ example:
     color: #565c65;
     font-weight: 300;
   }
+}
+.usa-footer__secondary-section a {
+  color: #005ea2;
+  text-decoration: none;
+  font-weight: normal;
 }
 
 /*# sourceMappingURL=uswds-custom.css.map */

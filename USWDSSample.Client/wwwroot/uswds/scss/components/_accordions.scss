@@ -118,3 +118,10 @@ $accordion-border: units($theme-accordion-border-width) solid
 .usa-accordion__button[aria-expanded="false"] {
   @include accordion-button-unopened-styles;
 }
+
+@media (min-width: 64em) {
+    .usa-header--extended .usa-nav__primary-item > .usa-current::after,
+    .usa-header--extended .usa-nav__primary-item > .usa-nav__link:hover::after {
+        display: none !important;
+    }
+}
