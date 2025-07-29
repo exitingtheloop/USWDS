@@ -13,7 +13,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\assets\" />
-    <Folder Include="wwwroot\uswds\" />
   </ItemGroup>
 
 </Project>

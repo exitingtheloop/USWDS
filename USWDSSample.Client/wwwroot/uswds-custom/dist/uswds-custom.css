@@ -71040,21 +71040,74 @@ example:
   }
   */
 }
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
 .usa-nav {
   background-color: #162e52;
   border: 0;
   float: none;
 }
 
-.usa-logo__image::before {
-  content: "";
-  display: block;
-  height: 150%;
-  width: 0;
+.usa-nav__primary button[aria-expanded=false] span::after {
+  display: none;
 }
 
-*, *::before, *::after {
-  box-sizing: inherit;
+.usa-nav__primary button {
+  color: #fff;
+}
+
+@media (max-width: 63.99em) {
+  .usa-nav__primary a:not(.usa-button):not(.usa-current) {
+    color: #fff;
+  }
+}
+@media (min-width: 64em) {
+  .usa-nav__primary button {
+    font-weight: normal;
+  }
+  .usa-nav__primary > .usa-nav__primary-item > a {
+    font-weight: normal;
+    color: #fff;
+  }
+  .usa-nav__primary > .usa-nav__primary-item > a:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  .usa-nav__primary button[aria-expanded=false] span::after {
+    display: none;
+  }
+  .usa-nav__primary .usa-accordion__button span {
+    margin-right: 0;
+    padding-right: 0;
+  }
+}
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px dashed;
+  border-top: 4px solid \9 ;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+.usa-nav__secondary-links .usa-nav__secondary-item a {
+  font-weight: 300;
+}
+
+@media (min-width: 64em) {
+  .usa-nav__secondary-links .usa-nav__secondary-item + .usa-nav__secondary-item::before {
+    color: #565c65;
+    font-weight: 300;
+  }
+}
+.usa-logo {
+  display: flex;
+  margin: 8px 0;
 }
 
 .usa-logo__image {
@@ -71077,85 +71130,15 @@ example:
 @media (min-width: 25em) {
   .usa-logo__image {
     height: 47px;
-    overflow: hidden;
     width: 249px;
     background-size: 249px 47px;
-  }
-  .usa-logo__image::before {
-    content: "";
-    display: block;
-    height: 150%;
-    width: 0;
   }
 }
 @media (min-width: 64em) {
   .usa-logo__image {
     height: 39px;
-    overflow: hidden;
     width: 313px;
     background-size: 313px 39px;
-  }
-  .usa-logo__image::before {
-    content: "";
-    display: block;
-    height: 150%;
-    width: 0;
-  }
-}
-.usa-nav__primary button {
-  color: #fff;
-}
-
-@media (min-width: 64em) {
-  .usa-nav__primary button {
-    font-weight: normal;
-  }
-  .usa-nav__primary button:hover {
-    color: #fff;
-    text-decoration: underline;
-  }
-}
-@media (min-width: 64em) {
-  .usa-nav__primary > .usa-nav__primary-item > a {
-    font-weight: normal;
-    color: #fff;
-  }
-  .usa-nav__primary > .usa-nav__primary-item > a:hover {
-    color: #fff;
-    text-decoration: underline;
-  }
-}
-.caret {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  margin-left: 2px;
-  vertical-align: middle;
-  border-top: 4px dashed;
-  border-top: 4px solid \9 ;
-  border-right: 4px solid transparent;
-  border-left: 4px solid transparent;
-}
-
-@media (min-width: 64em) {
-  .usa-nav__primary button[aria-expanded=false] span::after {
-    display: none;
-  }
-}
-@media (min-width: 64em) {
-  .usa-nav__primary .usa-accordion__button span {
-    margin-right: 0;
-    padding-right: 0;
-  }
-}
-.usa-nav__secondary-links .usa-nav__secondary-item a {
-  font-weight: 300;
-}
-
-@media (min-width: 64em) {
-  .usa-nav__secondary-links .usa-nav__secondary-item + .usa-nav__secondary-item::before {
-    color: #565c65;
-    font-weight: 300;
   }
 }
 .usa-footer__secondary-section a {
@@ -71168,11 +71151,6 @@ example:
   align-self: start;
   margin: 0 10px 0 0;
   width: 4.25rem;
-}
-
-.usa-logo {
-  display: flex;
-  margin: 8px 0;
 }
 
 .site-branding__site-name {
@@ -71191,7 +71169,7 @@ example:
   }
   .site-branding__usda-logo {
     width: 3.2em; /* Shrink the logo */
-    margin: 0 8px 0 0; /* Add space below, remove right margin */
+    margin: 0 8px 0 0;
   }
   .site-branding__site-name {
     font-size: 1em; /* Smaller site name */
@@ -71199,346 +71177,6 @@ example:
   }
   .site-branding__usda {
     font-size: 0.65em; /* Smaller USDA label */
-  }
-}
-.beebop-intro {
-  background: #fff;
-  padding-top: 3rem;
-  padding-bottom: 2rem;
-}
-.beebop-intro__heading {
-  font-size: 2.5rem;
-  font-weight: 700;
-  text-align: center;
-  margin-bottom: 0.5em;
-}
-.beebop-intro__divider {
-  width: 6rem;
-  margin: 1rem auto 2rem auto;
-  border: none;
-  border-top: 2px solid #e1e1e1;
-}
-.beebop-intro__desc {
-  text-align: center;
-  margin-bottom: 1.25rem;
-  font-size: 1.25rem;
-}
-
-.beebop-hero-card-section {
-  position: relative;
-  min-height: 370px;
-  padding: 0;
-  background: transparent;
-}
-.beebop-hero-card-section__bgimg {
-  position: absolute;
-  inset: 0;
-  background: url("https://images.pexels.com/photos/56876/queen-cup-honeycomb-honey-bee-new-queen-rearing-compartment-56876.jpeg?auto=compress&w=1200&h=500&fit=crop") center/cover no-repeat;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-.beebop-hero-card-section__container {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  min-height: 370px;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.beebop-hero-card {
-  background: #162e52;
-  color: #fff;
-  max-width: 32rem;
-  margin: 0 auto;
-  border-radius: 6px;
-  padding: 2.25rem 2rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13), 0 2px 8px rgba(0, 0, 0, 0.05);
-  text-align: left;
-  position: relative;
-}
-.beebop-hero-card__title {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
-.beebop-hero-card__cta {
-  background-color: #fdb81e;
-  color: #162e52;
-  font-size: 1.08rem;
-  margin-top: 1.5rem;
-}
-.beebop-hero-card__cta:hover, .beebop-hero-card__cta:focus {
-  background-color: #d89d13;
-  color: #162e52;
-  text-decoration: none;
-}
-
-@media (max-width: 900px) {
-  .beebop-hero-card-section__container {
-    padding-top: 2rem;
-    padding-bottom: 2rem;
-  }
-  .beebop-hero-card {
-    max-width: 100%;
-    padding: 2rem 1rem;
-  }
-}
-@media (max-width: 640px) {
-  .beebop-intro__heading {
-    font-size: 2rem;
-  }
-  .beebop-hero-card-section__container {
-    align-items: stretch;
-    min-height: 250px;
-  }
-  .beebop-hero-card {
-    padding: 1.5rem 0.5rem;
-    font-size: 1rem;
-  }
-}
-.beebop-hero {
-  background-image: url("https://images.pexels.com/photos/56876/queen-cup-honeycomb-honey-bee-new-queen-rearing-compartment-56876.jpeg?auto=compress&w=1200&h=500&fit=crop") !important;
-  background-position: center;
-  background-size: cover;
-  color: #fff;
-}
-
-.beebop-reports {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-.beebop-reports__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 2rem;
-}
-.beebop-reports__header h2 {
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: #162e52;
-  margin-bottom: 0;
-}
-.beebop-reports__all-link {
-  color: #005ea2;
-  text-decoration: underline;
-  font-size: 1rem;
-}
-.beebop-reports__all-link:hover {
-  color: #163963;
-}
-.beebop-reports__grid {
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  gap: 2.5rem;
-  align-items: flex-start;
-}
-.beebop-reports__main {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background: #fff;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0 2px 12px rgba(22, 46, 82, 0.05);
-  min-width: 0;
-}
-.beebop-reports__main-img {
-  width: 100%;
-  aspect-ratio: 3/2;
-  object-fit: cover;
-  border-radius: 0.5rem 0.5rem 0 0;
-}
-.beebop-reports__main-meta {
-  padding: 1.5rem 1rem;
-}
-.beebop-reports__main-date {
-  color: #616161;
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-}
-.beebop-reports__main-title {
-  font-size: 2rem;
-  font-weight: 500;
-  color: #162e52;
-  margin-bottom: 1rem;
-}
-.beebop-reports__main-btn {
-  background: #195840;
-  color: #fff;
-  border: none;
-  font-weight: 700;
-  margin-top: 1rem;
-}
-.beebop-reports__main-btn:hover, .beebop-reports__main-btn:focus {
-  background: #163963;
-  color: #fff;
-}
-.beebop-reports__list {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-.beebop-reports__item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.25rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid #eaeaea;
-}
-.beebop-reports__item:last-child {
-  border-bottom: none;
-}
-.beebop-reports__item-flag {
-  width: 3rem;
-  min-width: 3rem;
-  height: 2.1rem;
-  object-fit: cover;
-  border-radius: 0.2rem;
-  margin-top: 0.3rem;
-}
-.beebop-reports__item-content {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-.beebop-reports__item-date {
-  color: #616161;
-  font-size: 1rem;
-  margin-bottom: 0.15rem;
-}
-.beebop-reports__item-title {
-  color: #162e52;
-  font-size: 1.08rem;
-  font-weight: 700;
-  text-decoration: underline;
-  line-height: 1.2;
-}
-.beebop-reports__item-title:hover {
-  color: #005ea2;
-}
-
-@media (max-width: 1000px) {
-  .beebop-reports__grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .beebop-reports__main-title {
-    font-size: 1.4rem;
-  }
-}
-@media (max-width: 640px) {
-  .beebop-reports__header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  .beebop-reports__main-meta {
-    padding: 1rem 0.4rem;
-  }
-  .beebop-reports__main-title {
-    font-size: 1.1rem;
-  }
-  .beebop-reports__item-title {
-    font-size: 0.96rem;
-  }
-}
-.beebop-news {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
-}
-.beebop-news__header {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: 2rem;
-}
-.beebop-news__header h2 {
-  font-size: 2.2rem;
-  font-weight: 600;
-  color: #162e52;
-  margin-bottom: 0;
-}
-.beebop-news__all-link {
-  color: #005ea2;
-  text-decoration: underline;
-  font-size: 1rem;
-}
-.beebop-news__all-link:hover {
-  color: #163963;
-}
-.beebop-news__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem 3rem;
-}
-.beebop-news__item {
-  border-bottom: 1px solid #eaeaea;
-  padding-bottom: 2rem;
-  margin-bottom: 2rem;
-  min-width: 0;
-}
-.beebop-news__item:last-child {
-  border-bottom: none;
-  margin-bottom: 0;
-  padding-bottom: 0;
-}
-.beebop-news__date {
-  color: #434343;
-  font-size: 1rem;
-  margin-bottom: 0.2rem;
-}
-.beebop-news__category {
-  font-size: 1.03rem;
-  font-weight: 700;
-  margin-bottom: 0.2rem;
-  display: inline-block;
-}
-.beebop-news__category.news-release {
-  color: #0378d8;
-}
-.beebop-news__category.stakeholder-notice {
-  color: #14623b;
-}
-.beebop-news__title {
-  color: #162e52;
-  font-size: 1.13rem;
-  font-weight: 700;
-  text-decoration: underline;
-  line-height: 1.25;
-  margin-bottom: 0.5rem;
-  display: inline-block;
-}
-.beebop-news__title:hover {
-  color: #005ea2;
-}
-.beebop-news__summary {
-  color: #363636;
-  font-size: 1rem;
-  margin-bottom: 0;
-}
-
-@media (max-width: 1000px) {
-  .beebop-news__grid {
-    grid-template-columns: 1fr;
-    gap: 2rem 0;
-  }
-}
-@media (max-width: 640px) {
-  .beebop-news__header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  .beebop-news__title {
-    font-size: 1rem;
-  }
-  .beebop-news__summary {
-    font-size: 0.95rem;
   }
 }
 
